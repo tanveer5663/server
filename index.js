@@ -12,6 +12,11 @@ app.get("/", (req, res) => {
 app.get("/api/get", (req, res) => {
   res.send({ message: "hello back to nodejs" });
 });
+app.get("/api/ta", async (req, res) => {
+  const apiResponse = await fetch("https://jsonplaceholder.typicode.com/users");
+  const data = await apiResponse.json();
+  res.json(data);
+});
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
