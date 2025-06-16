@@ -6,7 +6,9 @@ app.use(cors())
 app.get("/", (req, res) => {
   res.json({ message: "Hello, World!" });
 });
-
-app.listen(3000, () => {
+app.get("/api/get", (req, res) => {
+  res.send({ message: "hello back to nodejs" });
+});
+app.listen(8000, () => {
   console.log("Server is running on http://localhost:3000");
 });
