@@ -9,6 +9,9 @@ app.get("/", (req, res) => {
 app.get("/api/get", (req, res) => {
   res.send({ message: "hello back to nodejs" });
 });
+app.get("/api", (req, res) => {
+  res.json({ message: "Hello, World!" });
+});
 app.listen(8000, () => {
   console.log("Server is running on http://localhost:3000");
 });
